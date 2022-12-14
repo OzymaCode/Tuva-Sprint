@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.5",
+    "@reduxjs/toolkit": "^1.9.1",
     "@sanity/image-url": "^1.0.1",
     "@stripe/react-stripe-js": "^1.16.1",
     "@stripe/stripe-js": "^1.46.0",
