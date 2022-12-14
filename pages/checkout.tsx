@@ -30,7 +30,10 @@ const Checkout = () => {
       {} as { [key: string]: Product[] }
     );
     setItemGroups(newItems);
-    const newSubtotal = items.reduce((acc, item) => acc + item.price, 0);
+    const newSubtotal = items.reduce(
+      (acc: number, item: Product) => acc + item.price,
+      0
+    );
     setSubtotal(newSubtotal);
   }, [items]);
 
