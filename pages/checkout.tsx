@@ -21,11 +21,14 @@ const Checkout = () => {
   const [subtotal, setSubtotal] = useState(0);
   useEffect(() => {
     console.log(items);
-    const newItems = items.reduce((acc, element) => {
-      acc[element._id] = acc[element._id] || [];
-      acc[element._id].push(element);
-      return acc;
-    }, {} as { [key: string]: Product[] });
+    const newItems = items.reduce(
+      (acc: { [key: string]: Product[] }, element: Product) => {
+        acc[element._id] = acc[element._id] || [];
+        acc[element._id].push(element);
+        return acc;
+      },
+      {} as { [key: string]: Product[] }
+    );
     setItemGroups(newItems);
     const newSubtotal = items.reduce((acc, item) => acc + item.price, 0);
     setSubtotal(newSubtotal);
